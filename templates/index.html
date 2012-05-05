@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Ad test page</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+        <ul class="nav">
+
+            {% for code,name,active in locations %}
+            <li {%if active%}class="active"{%endif%}><a href='/{{ code }}'>{{ name }}</a></li>
+            {{ a }}
+            {{ b }}
+
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="page-header">
+    <h1>Test Ads</h1>
+</div>
+
+{% for row in rows %}
+<div class="row">
+    {% for slot in row %}
+    <div class="span10">
+        <h2>{{ slot }}</h2>
+        <script src="http://www.guardian.co.uk/global/adcode/generate?partner=rubi-test.appspot.com/{{ current }}&slot={{ slot }}"></script>
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+
+</body>
+</html>
