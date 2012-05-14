@@ -25,7 +25,7 @@ class MainHandler(webapp.RequestHandler):
                 active_node(('aus', 'Australia'), code)
             ],
             'current': code,
-            'rows': [['Top', 'Middle'], ['Middle2', 'Middle3'], ['Right1', 'Right2']]
+            'rows': [['Top', 'Middle'], ['Middle1', 'Middle2'],['Middle3'], ['Right1', 'Right2']]
         }
         path = os.path.join(os.path.dirname(__file__), 'templates/index.html')
         self.response.out.write(template.render(path, template_values))
